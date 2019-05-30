@@ -82,9 +82,9 @@ WSGI_APPLICATION = 'flightsrest.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'demo',
-        'USER': 'postgres',
-        'PASSWORD': '1',
+        'NAME': 'dd6qq645nqohea',
+        'USER': 'hcvmmbvkoxsmej',
+        'PASSWORD': 'f6b51bdec0732e4967160e38543904cd256e4299fc6d38af88e8c5febc5f1ebd',
         'HOST': '127.0.0.1',
         'PORT': '5432'
     }
