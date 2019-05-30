@@ -2,7 +2,7 @@
 __pycache__/
 *.py[cod]
 *$py.class
-
+.idea/
 demo-small-20170815.sql
 
 # C extensions
