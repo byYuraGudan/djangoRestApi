@@ -1,4 +1,3 @@
-
 """
 Django settings for flightsrest project.
 
@@ -12,7 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
-import django_heroku
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -27,10 +26,13 @@ SECRET_KEY = 'ahgmn*u0#)28x&=)@hdg=(#v3l9-s8&m$#zlzx&j!uu^b@kkfk'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-#Activate Django-Herolu
-django_heroku.settings(locals())
+
 
 # Application definition
+import django_heroku
+
+django_heroku.settings(locals())
+
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -78,15 +80,11 @@ WSGI_APPLICATION = 'flightsrest.wsgi.application'
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 DATABASES = {
-    #'default': {
-    #    'ENGINE': 'django.db.backends.sqlite3',
-    #    'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    #}
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'demo',
         'USER': 'postgres',
-        'PASSWORD': 'test',
+        'PASSWORD': '1',
         'HOST': '127.0.0.1',
         'PORT': '5432'
     }
@@ -129,15 +127,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.9/howto/static-files/
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
 STATIC_URL = '/static/'
 
-# Extra places for collectstatic to find static files.
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-)
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework_simplejwt.authentication.JWTAuthentication',
