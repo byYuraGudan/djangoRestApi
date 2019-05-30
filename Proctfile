@@ -1,1 +1,1 @@
-web: gunicorn flightrest.wsgi
+web: gunicorn flightsrest.wsgi
