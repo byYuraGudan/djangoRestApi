@@ -1,0 +1,6 @@
+export AWS_ACCESS_KEY_ID="AKIAIARCV3BWMF7JXNGQ"
+export AWS_SECRET_ACCESS_KEY="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"
+export AWS_STORAGE_BUCKET_NAME="django-blog-files"
+
+export SECRET_KEY ="0f6637c9286f7982d6bdec7dcbcfb0cd05cd4085b4ebfaf0"
+export DEBUG_VALUE="TRUE"
