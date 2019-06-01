@@ -81,15 +81,22 @@ WSGI_APPLICATION = 'flightsrest.wsgi.application'
 
 DATABASES = {
     'default': {
+
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'dd6qq645nqohea',
-        'USER': 'hcvmmbvkoxsmej',
-        'PASSWORD': 'f6b51bdec0732e4967160e38543904cd256e4299fc6d38af88e8c5febc5f1ebd',
+        'NAME': 'demo',
+        'USER': 'postgres',
+        'PASSWORD': '1',
         'HOST': '127.0.0.1',
         'PORT': '5432'
     }
 }
+MIDDLEWARE_CLASSES = (
+    # Simplified static file serving.
+    # https://warehouse.python.org/project/whitenoise/
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+)
 
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
@@ -129,6 +136,10 @@ USE_TZ = True
 
 STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
